@@ -1,0 +1,38 @@
+int trigger_pin = D2;
+int echo_pin = D3;
+int time;
+int distance; 
+void setup ( ) 
+{
+
+    
+    Serial.begin (9600); 
+    
+    pinMode (trigger_pin, OUTPUT); 
+       
+ pinMode (echo_pin, INPUT);
+}
+
+void loop()
+{
+ 
+   digitalWrite (trigger_pin, HIGH);
+   
+ delayMicroseconds (10);
+    digitalWrite (trigger_pin, LOW);
+  
+  distance = pulseIn (echo_pin, HIGH);
+    
+      
+  Serial.print (" Distance= ");              
+ 
+       Serial.println (distance);               
+ 
+       delay (500);
+      
+  Serial.print (" Distance= ");        
+      
+        Serial.println (distance);          
+ 
+       delay (500);        
+  }
